@@ -1,0 +1,84 @@
+/* Universal selector: It selects all elements in HTML and applies styles as defined here. This is not INHERITANCE. 
+It means the styles defined in this selector are a part of all element selectors.
+
+One thing which is similar to inheritance is that if elements have their specific styling, then the universal styling effect gets dominated by the conflicting styles defined in specific rules.
+*/
+* {
+    /* Also a feature called css reset is used in favor of universal selectors. */
+    /* font-family: monospace; */
+    box-sizing: border-box;
+    /* Again this is not inheritance. It simply applies styling to all child elements. */
+    /* border: 1px solid #333; */
+}
+/* Inheritance just like body also works here!
+html {
+    font-size: 22px;
+} */
+
+/* Element selector */
+body {
+    font-size: 22px;
+    /* In browser, we'll see all text-based elements got the same font-size as mentioned here (not all). This is due to inheritance. All child elements inherit the styles from its parent elements. But there is a catch. If elements have their specific styling, then inheritance effect gets dominated (overridden) by the conflicting styles defined in specific rules.
+
+    (Of course, the declarations defined here should be compatible on all other elements which will be passed to them, if not, the styles are simply not applied)
+    
+    Usually declarations related to color, typography are inherited, not border, margin etc.  */
+    /* border: 3px solid #333; */
+    /* dry: don't  repeat yourself : Inheritance helps with this technique. */
+}
+
+main {
+    font-family: monospace;
+}
+
+/* FORM ELEMENTS don't inherit styles from parent using inheritance. So, to use inherited styles from parent, we need to use the 'inherit' value in their properties. */
+button,
+input,
+textarea,
+select {
+    font-size: inherit;
+}
+
+/* Group selectors, meaning two element selectors receive the same declaration color: blue; These are not combinators. */
+h1,
+h2 {
+    color: blue;
+}
+
+/* Please don't use important value - It's job is to increase the specificity up to the top, even before inline style specicity. Using !important makes hard to maintain codebase. It breaks all CSS specificty rules. */
+p {
+    color: purple; /* !important; */
+}
+
+/* If no dominance (specificity) is involved, then the parsing is like a waterfall. The styling gets applied for the rule which is present later for same selectors. This is also same for classes with same/different names. If one/two classes targets the same element, both of which contains same conflicting declarations, then the styling gets applied for the class rule which comes later.
+
+Same for id selectors, attribute selectors, etc. */
+/* p {
+    color: red;
+} */
+
+/* THIS IS A COMBINATOR. It depicts that all span elements (by using element selector) which are nested inside the p element should receive the following declarations. Span element can be at the same level as of a p element or be deeply nested inside p element. */
+/* p span {
+    text-transform: uppercase;
+    background-color: gold;
+} */
+
+/* Or use a class instead (same effect as above which used combinatos, now using classes) ! */
+.highlight {
+    text-transform: uppercase;
+    background-color: gold;
+}
+
+/* Class selector starts with a period and with any identifier (a name). Dont use numbers at start of identifier name. Classes are more specific (higher specificity) than element selectors. Classes will use styles as defined in element selector and will resolve the conflicts with the same declarations present in both rules by applying its own declaration (overrides). In this case, the color declaration (from purple to gray). */
+.gray {
+    color: #808080;
+}
+
+/* Id selector: Same concept as of class selectors but are even more specific than class selectors. As usual, id selectors must be used once per page (HTML), which means the #second must exist only once in HTML. Id's are not recommended in CSS. */
+#second {
+    font-style: italic;
+}
+
+/* Specificity order: inline HTML styles (not recomm.) > id selectors (not recomm.) > class selectors (recomm.)/attribute selectors/pseudo-class selectors >
+element selectors > pseudo-element selectors > universal selector(*) > inheritance (although we can explicitly use inherited styles from parent (increase specificity) using the 'inherit' value in properties.
+Check the website https://www.specificity.keegan.st  for specifity calculations for various CSS selectors. */

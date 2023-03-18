@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting started with CSS</title>
+    <!--Using external stylesheet. This is the recommended way of styling elements.-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!--<link type="text/css"> is no longer required in modern development.-->
+    <style>
+        /* Writing style in style tag.
+        Remember CSS in style tag doesn't dominate the style present in external stylesheets. The parsing occurs from top to bottom. Here, first the external css stylesheet gets parsed, then this internal one. As usual, whenever there is a conflict in style, like this p style color property, simply the one which comes later gets applied. */
+        /* p {
+            color: limegreen;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- This way of styling, inline style does take precedence over internal/external styling discussed above because the inline style directly gets applied over an element which actually dominates over all other ways of styling. Not recommended this way.-->
+    <!-- <p style="color: blue">I'm learning CSS!</p> -->
+    <p>I'm learning CSS!</p>
+</body>
+
+</html>

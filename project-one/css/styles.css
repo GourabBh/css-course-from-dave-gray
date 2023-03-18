@@ -1,0 +1,16 @@
+/* Element selector: paragraph tag */
+p {
+    font-size: 64px;
+    /* Spelling uses the American english. */
+    color: purple;
+}
+
+/* p -> Selector
+    { -> opening brackets for describing CSS rules.
+        color -> property (name)
+        : -> separator between property name and property value.
+        red -> property value
+        ; -> all properties defined in .CSS file must end with semicolon;
+        color: red; -> declaration
+    } -> closing brackets which depicts end of a CSS rule.
+*/
