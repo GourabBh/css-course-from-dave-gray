@@ -1,0 +1,30 @@
+body {
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    /* There are actually color names (leaving the hex color code/rgb() function color) available in VS Code. */
+    /* backgroud sets the background color of element. */
+    background: papayawhip;
+    /* color sets the color of element content. */
+    color: darkblue;
+    /* Remember all these above styles are eligible for inheritance discussed before, for passing down to child elements! */
+    /* We can use the rgb() function to set colors,
+    r -> red, g -> green, b -> blue. CSS specification says almost any color can be created using a combination of red, green and blue values. Their values range from 0 to 255. 0 in any of them means absence of that color, 255 in any of them means full prsence of that color. Zero value in all of them depicts complete black, 255 in all of them means complete white. */
+    color: rgb(0, 0, 0);
+}
+
+p {
+    /* We can also use the rgba() function which is same as rgb() but with an alpha channel feature which depicts the color transparency. It has values ranging from 0 to 1. 1 means complete presence (normal), 0 means complete absence. A good value is to set 0.5 (50%) to observe the transparency effect! */
+    color: rgba(0, 0, 0, 0.5);
+    /* 
+    Another way of specifying color is using hex code. 
+    We use hexadecimal digits 0-9 and A through F or a through f to specify any color. Hex code contains six hexadecimal digits each of which can be any digit as mentioned above. The first two digits specifies the amount of red, 2nd two green and 3rd two blue. */
+    /* If each pair matches with others, like #000000 or #333333 or #ffffff, we can use shorthand notations to specify colors like #333, etc, but for #808080 there is not shorthand. */
+    color: hsl(266, 100%, 50%);
+    /* We have a function called hsl() or hsla() which stands for hue, saturation, lightness and with an alpha channel version for transparency features. */
+    /* 50% is middle lightness at top-right corner of VS code color palette, 100% at left corner, 
+    100% for saturation at top-right, (0% at top-left) gives a full color. */
+    /* hue has values from 0 to 360, essentially a color wheel, hue value gives different colors. */
+
+    /* Check https://www.coolors.co */
+}
